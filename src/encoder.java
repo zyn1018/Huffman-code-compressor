@@ -5,7 +5,7 @@ import java.io.*;
  */
 public class encoder {
     public static void main(String[] args) {
-        long start = System.currentTimeMillis();
+
         int currentBit = 0;
         InputReader ir = new InputReader("sample_input_large.txt");
         String[] text = ir.parseInput();
@@ -15,6 +15,7 @@ public class encoder {
         pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
         Node root = pairingHeap.extractMin();
         root.setBin("");
+        long start = System.currentTimeMillis();
         huffmanTree.encode(root);
         String currentString = "";
         String subByte = "";

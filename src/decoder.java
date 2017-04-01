@@ -11,7 +11,6 @@ public class decoder {
         File fileCodeTab = new File("code_table.txt");
         Map<String, String> binaryMap = new HashMap<>();
         CodeTableTree cTree = new CodeTableTree();
-        long start = System.currentTimeMillis();
         if (!fileEncoded.exists()) {
             try {
                 fileEncoded.createNewFile();
@@ -26,6 +25,7 @@ public class decoder {
                 e.printStackTrace();
             }
         }
+        long start = System.currentTimeMillis();
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fileCodeTab)));
             String[] lineTokens;
