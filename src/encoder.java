@@ -69,7 +69,7 @@ public class encoder {
             if (currentString.length() != 0) {
                 int num = 8 - currentString.length();
                 for (int i = 0; i < num; i++) {
-                    currentString+="0";
+                    currentString += "0";
                 }
                 writebyte = Integer.valueOf(currentString, 2).byteValue();
                 binWriter.write(writebyte);
@@ -79,7 +79,7 @@ public class encoder {
             binWriter.flush();
             binWriter.close();
             long end = System.currentTimeMillis();
-            System.out.println((end - start)+"ms");
+            System.out.println("Encoding takes " + (end - start) + "ms");
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
