@@ -11,7 +11,7 @@ public class HuffmanTree {
     //text needed to be encoded;
     private String[] text;
 
-    //frequence table
+    //frequency table
     public Map<String, Integer> freq_table;
 
     //code table

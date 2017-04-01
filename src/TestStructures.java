@@ -4,10 +4,10 @@
 public class TestStructures {
     public static void main(String[] args) {
 
-//        InputReader ir = new InputReader("sample_input_large.txt");
-//        String[] text = ir.parseInput();
-//        HuffmanTree huffmanTree = new HuffmanTree(text);
-//        huffmanTree.getStatistics();
+        InputReader ir = new InputReader("sample_input_large.txt");
+        String[] text = ir.parseInput();
+        HuffmanTree huffmanTree = new HuffmanTree(text);
+        huffmanTree.getStatistics();
         /*
          *  test binary heap
          */
@@ -39,13 +39,13 @@ public class TestStructures {
         /*
          *  test pairing heap
          */
-//        PairingHeap pairingHeap = new PairingHeap();
-//        long start3 = System.currentTimeMillis();
+        PairingHeap pairingHeap = new PairingHeap();
+        long start3 = System.currentTimeMillis();
 //        for (int i = 0; i < 10; i++) {
-//            pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
+            pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
 //        }
-//        long end3 = System.currentTimeMillis();
-//        System.out.println("Total Time for using pairing heap to build huffman tree 10 times = " + (end3 - start3) + "ms");
+        long end3 = System.currentTimeMillis();
+        System.out.println("Total Time for using pairing heap to build huffman tree 10 times = " + (end3 - start3) + "ms");
 //        System.out.println("Average time for each round is " + (end3 - start3) / 10 + "ms");
 
     }
