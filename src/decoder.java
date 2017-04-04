@@ -34,7 +34,7 @@ public class decoder {
             while ((line = br.readLine()) != null) {
                 lineTokens = line.split(" ");
                 binaryMap.put(lineTokens[1], lineTokens[0]);
-                if(lineTokens[1].length() < count) {
+                if (lineTokens[1].length() < count) {
                     count = lineTokens[1].length();
                 }
             }
@@ -62,7 +62,7 @@ public class decoder {
                     else
                         code += "0";
                     // Attempt to match the code in the hashmap if it is write the code
-                    if ( code.length() >= count && binaryMap.containsKey(code)) {
+                    if (code.length() >= count && binaryMap.containsKey(code)) {
                         writer.write(binaryMap.get(code));
                         writer.newLine();
                         code = "";

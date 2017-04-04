@@ -42,7 +42,7 @@ public class TestStructures {
         PairingHeap pairingHeap = new PairingHeap();
         long start3 = System.currentTimeMillis();
 //        for (int i = 0; i < 10; i++) {
-            pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
+        pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
 //        }
         long end3 = System.currentTimeMillis();
         System.out.println("Total Time for using pairing heap to build huffman tree 10 times = " + (end3 - start3) + "ms");

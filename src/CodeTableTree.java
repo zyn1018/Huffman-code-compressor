@@ -10,7 +10,7 @@ public class CodeTableTree {
     public Node root;
 
     public Node buildTreeUsingCodeTable(Map<String, String> map) {
-        if(map == null) {
+        if (map == null) {
             return null;
         }
         Set<String> binaryKey = map.keySet();
@@ -44,7 +44,7 @@ public class CodeTableTree {
                         }
                     } else if (key.charAt(i) == '1') {
                         parentNode = curNode;
-                        if ( curNode.getRightChild()== null) {
+                        if (curNode.getRightChild() == null) {
                             Node node = new Node();
                             parentNode.setRightChild(node);
                             curNode = curNode.getRightChild();
@@ -59,19 +59,19 @@ public class CodeTableTree {
         return root;
     }
 
-    public void printTree (Node node) {
-        if(node == null) {
+    public void printTree(Node node) {
+        if (node == null) {
             return;
         }
         Queue<Node> queue = new LinkedList<>();
         queue.add(node);
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node curnode = queue.poll();
             System.out.println(curnode.getStr());
-            if(curnode.getLeftChild() != null) {
+            if (curnode.getLeftChild() != null) {
                 queue.add(curnode.getLeftChild());
             }
-            if(curnode.getRightChild() != null) {
+            if (curnode.getRightChild() != null) {
                 queue.add(curnode.getRightChild());
             }
         }
