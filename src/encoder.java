@@ -6,14 +6,19 @@ import java.io.*;
 public class encoder {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        int currentBit = 0;
-        InputReader ir = new InputReader("sample_input_large.txt");
+        InputReader ir = new InputReader("sample_input_small.txt");
         String[] text = ir.parseInput();
         HuffmanTree huffmanTree = new HuffmanTree(text);
         huffmanTree.getStatistics();
+        /*
+        Using Pairing Heap
+         */
 //        PairingHeap pairingHeap = new PairingHeap();
 //        pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
 //        Node root = pairingHeap.extractMin();
+        /*
+        Using Binary Heap
+         */
         BinaryHeap bh = new BinaryHeap();
         bh.buildTreeUsingBinaryHeap(huffmanTree.freq_table);
         Node root = bh.deleteMin();
