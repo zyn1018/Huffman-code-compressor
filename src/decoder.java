@@ -7,6 +7,7 @@ import java.util.Map;
  */
 public class decoder {
     public static void main(String[] args) {
+        int count = 100;
         File fileEncoded = new File("encoded.bin");
         File fileCodeTab = new File("code_table.txt");
         Map<String, String> binaryMap = new HashMap<>();
@@ -33,7 +34,9 @@ public class decoder {
             while ((line = br.readLine()) != null) {
                 lineTokens = line.split(" ");
                 binaryMap.put(lineTokens[1], lineTokens[0]);
-
+                if(lineTokens[1].length() < count) {
+                    count = lineTokens[1].length();
+                }
             }
 //            System.out.println(binaryMap);
 //            Node root = cTree.buildTreeUsingCodeTable(binaryMap);
@@ -59,7 +62,7 @@ public class decoder {
                     else
                         code += "0";
                     // Attempt to match the code in the hashmap if it is write the code
-                    if (binaryMap.containsKey(code)) {
+                    if ( code.length() >= count && binaryMap.containsKey(code)) {
                         writer.write(binaryMap.get(code));
                         writer.newLine();
                         code = "";

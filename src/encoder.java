@@ -11,9 +11,12 @@ public class encoder {
         String[] text = ir.parseInput();
         HuffmanTree huffmanTree = new HuffmanTree(text);
         huffmanTree.getStatistics();
-        PairingHeap pairingHeap = new PairingHeap();
-        pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
-        Node root = pairingHeap.extractMin();
+//        PairingHeap pairingHeap = new PairingHeap();
+//        pairingHeap.buildTreeUsingPairingHeap(huffmanTree.freq_table);
+//        Node root = pairingHeap.extractMin();
+        BinaryHeap bh = new BinaryHeap();
+        bh.buildTreeUsingBinaryHeap(huffmanTree.freq_table);
+        Node root = bh.deleteMin();
         root.setBin("");
         huffmanTree.encode(root);
         String currentString = "";
